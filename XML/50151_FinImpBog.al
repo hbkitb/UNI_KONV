@@ -145,20 +145,20 @@ xmlport 50151 "50151_Imp_FinKart"
             repeat
                 if Felt02 <> '' then begin
 
-                    if ((Felt02 = 'U25') OR (felt02 = 'Udg25')) then begin
+                    if ((Felt02 = 'U25') OR (felt02 = 'Salg')) then begin
                         FinKart."Gen. Posting Type" := FinKart."Gen. Posting Type"::Sale;
                         FinKart."Gen. Bus. Posting Group" := 'INDENLANDS';
-                        FinKart."Gen. Prod. Posting Group" := 'DIVERSE';
-                        FinKart."VAT Bus. Posting Group" := 'DANMARK'; //'INDLAND';
+                        FinKart."Gen. Prod. Posting Group" := 'DIV';
+                        FinKart."VAT Bus. Posting Group" := 'INDENLANDS'; //'INDLAND';
                         FinKart."VAT Prod. Posting Group" := 'STANDARD';
                         FinKart.Modify();
                     end;
 
-                    if ((Felt02 = 'I25') OR (Felt02 = 'Indg25')) then begin
+                    if ((Felt02 = 'I25') OR (Felt02 = 'Køb')) then begin
                         FinKart."Gen. Posting Type" := FinKart."Gen. Posting Type"::Purchase;
                         FinKart."Gen. Bus. Posting Group" := 'INDENLANDS';
-                        FinKart."Gen. Prod. Posting Group" := 'DIVERSE';
-                        FinKart."VAT Bus. Posting Group" := 'DANMARK';
+                        FinKart."Gen. Prod. Posting Group" := 'DIV';
+                        FinKart."VAT Bus. Posting Group" := 'INDENLANDS';
                         FinKart."VAT Prod. Posting Group" := 'STANDARD';
                         FinKart.Modify();
                     end;
@@ -166,7 +166,7 @@ xmlport 50151 "50151_Imp_FinKart"
                     if (Felt02 = 'EU') OR (felt02 = 'IMPORT') then begin
                         FinKart."Gen. Posting Type" := FinKart."Gen. Posting Type"::Purchase;
                         FinKart."Gen. Bus. Posting Group" := 'EU';
-                        FinKart."Gen. Prod. Posting Group" := 'DIVERSE';
+                        FinKart."Gen. Prod. Posting Group" := 'DIV';
                         FinKart."VAT Bus. Posting Group" := 'EU';
                         FinKart."VAT Prod. Posting Group" := 'STANDARD';
                         FinKart.Modify();

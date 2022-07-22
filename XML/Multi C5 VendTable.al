@@ -97,7 +97,7 @@ xmlport 70009 "Multi C5 VendTable"
                             VendorPostingGroup.Insert;
                         end;
                         VendTable."Gen. Bus. Posting Group" := Group;
-                        VendTable."VAT Bus. Posting Group" := 'Danmark';
+                        VendTable."VAT Bus. Posting Group" := 'INDENLANDS';
 
                         VendTable."Vendor Posting Group" := Group
                     end;

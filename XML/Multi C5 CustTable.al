@@ -104,7 +104,7 @@ xmlport 70005 "Multi C5 CustTable"
                             CustomerPostingGroup.Insert;
                         end;
                         CustTable."Gen. Bus. Posting Group" := Group;
-                        CustTable."VAT Bus. Posting Group" := 'Danmark';
+                        CustTable."VAT Bus. Posting Group" := 'INDENLANDS';
 
                         CustTable."Customer Posting Group" := Group;
                     end;
