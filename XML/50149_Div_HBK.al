@@ -2,7 +2,7 @@ xmlport 50150 "50150_Posting_Setup_ERPG"
 {
     // version ITB.Imp_Bogf._Setup_C5
 
-    // Diverse opdateringer bogføringsopsætninger
+    // Diverse opdateringer bogføringsopsætninger//
     // HBK - 110917 m.v.
 
     Caption = 'LagImport';
