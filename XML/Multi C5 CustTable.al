@@ -71,7 +71,7 @@ xmlport 70005 "Multi C5 CustTable"
                     var
 
                     begin
-                        CustTable."Phone No." := DelChr(PhoneTxt, '=', 'abcdefprivnqtsuvxyz');
+                        CustTable."Phone No." := DelChr(PhoneTxt, '=', 'äÄÜüûabcdefghijklmnopqrstuvwxyzæøå@ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ');
                     End;
 
                 }

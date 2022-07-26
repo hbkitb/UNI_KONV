@@ -64,7 +64,7 @@ xmlport 70009 "Multi C5 VendTable"
                     var
 
                     begin
-                        VendTable."Phone No." := DelChr(PhoneTxt, '=', 'abcdefprivnqtsuvxyz');
+                        VendTable."Phone No." := DelChr(PhoneTxt, '=', 'äÄÜüûabcdefghijklmnopqrstuvwxyzæøå@ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ');
                     End;
 
                 }

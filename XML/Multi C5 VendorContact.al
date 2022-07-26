@@ -1,6 +1,6 @@
 ﻿xmlport 70043 MultiC5_VendorContact
 {
-    
+
     Direction = Import;
     FieldDelimiter = '¤';
     FieldSeparator = ';';
@@ -35,8 +35,23 @@
                 fieldelement(City; Contact.City)
                 {
                 }
+
+                /* 260722
                 fieldelement(Phone; Contact."Phone No.")
                 {
+                }
+                260722 */
+
+                textelement(PhoneTxt)
+                {
+                    trigger OnBeforePassVariable()
+
+                    var
+
+                    begin
+                        Contact."Phone No." := DelChr(PhoneTxt, '=', 'äÄÜüûabcdefghijklmnopqrstuvwxyzæøå@ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ');
+                    End;
+
                 }
                 fieldelement(Language; Contact."Language Code")
                 {
@@ -59,11 +74,39 @@
                 fieldelement(CompanyName; Contact."Company Name")
                 {
                 }
+                /*  260722
                 fieldelement(Phone; Contact."Phone No.")
                 {
                 }
+260722 */
+                textelement(PhoneTxt2)
+                {
+                    trigger OnBeforePassVariable()
+
+                    var
+
+                    begin
+                        Contact."Phone No." := DelChr(PhoneTxt2, '=', 'äÄÜüûabcdefghijklmnopqrstuvwxyzæøå@ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ');
+                    End;
+
+                }
+
+                /* 260722
                 fieldelement(MobilePhoneNo; Contact."Mobile Phone No.")
                 {
+                }
+                260722 */
+
+                textelement(MobilePhoneTxt)
+                {
+                    trigger OnBeforePassVariable()
+
+                    var
+
+                    begin
+                        Contact."Mobile Phone No." := DelChr(MobilePhoneTxt, '=', 'äÄÜüûabcdefghijklmnopqrstuvwxyzæøå@ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ');
+                    End;
+
                 }
 
                 trigger OnBeforeModifyRecord()
