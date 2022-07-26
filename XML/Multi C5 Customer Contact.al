@@ -47,7 +47,7 @@
                     var
 
                     begin
-                        Contact."Phone No." := DelChr(PhoneTxt, '=', ' abcdefghijklmnopqrstuvwxyz@.,ABCDEFGHIJKLMNOPQRSTUVWXYZ-');
+                        Contact."Phone No." := DelChr(PhoneTxt, '=', ' abcdefghijklmnopqrstuvwxyzæøå@.,ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ-');
                     End;
 
                 }
@@ -84,7 +84,7 @@
                     var
 
                     begin
-                        Contact."Phone No." := DelChr(PhoneTxt2, '=', ' abcdefghijklmnopqrstuvwxyz@.,ABCDEFGHIJKLMNOPQRSTUVWXYZ-');
+                        Contact."Phone No." := DelChr(PhoneTxt2, '=', ' abcdefghijklmnopqrstuvwxyzæøå@.,ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ-');
                     End;
 
                 }
@@ -101,7 +101,7 @@
                     var
 
                     begin
-                        Contact."Mobile Phone No." := DelChr(MobilePhoneTxt, '=', ' abcdefghijklmnopqrstuvwxyz@.,ABCDEFGHIJKLMNOPQRSTUVWXYZ-');
+                        Contact."Mobile Phone No." := DelChr(MobilePhoneTxt, '=', ' abcdefghijklmnopqrstuvwxyzæøå@.,ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ-');
                     End;
 
                 }
