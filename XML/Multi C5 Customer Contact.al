@@ -42,12 +42,12 @@
                 250722  */
                 textelement(PhoneTxt)
                 {
-                    trigger OnAfterAssignVariable()
+                    trigger OnBeforePassVariable()
 
                     var
 
                     begin
-                        Contact."Phone No." := DelChr(PhoneTxt, '=', ' abcdefghijklmnopqrstuvwxyzæøå@.,ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ-');
+                        Contact."Phone No." := DelChr(PhoneTxt, '=', 'äÄÜüûabcdefghijklmnopqrstuvwxyzæøå@ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ');
                     End;
 
                 }
@@ -79,12 +79,12 @@
                 250722 */
                 textelement(PhoneTxt2)
                 {
-                    trigger OnAfterAssignVariable()
+                    trigger OnBeforePassVariable()
 
                     var
 
                     begin
-                        Contact."Phone No." := DelChr(PhoneTxt2, '=', ' abcdefghijklmnopqrstuvwxyzæøå@.,ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ-');
+                        Contact."Phone No." := DelChr(PhoneTxt2, '=', 'äÄÜüûabcdefghijklmnopqrstuvwxyzæøå@ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ');
                     End;
 
                 }
@@ -96,12 +96,12 @@
 
                 textelement(MobilePhoneTxt)
                 {
-                    trigger OnAfterAssignVariable()
+                    trigger OnBeforePassVariable()
 
                     var
 
                     begin
-                        Contact."Mobile Phone No." := DelChr(MobilePhoneTxt, '=', ' abcdefghijklmnopqrstuvwxyzæøå@.,ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ-');
+                        Contact."Mobile Phone No." := DelChr(MobilePhoneTxt, '=', 'äÄÜüûabcdefghijklmnopqrstuvwxyzæøå@ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ');
                     End;
 
                 }
