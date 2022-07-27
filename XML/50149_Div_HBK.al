@@ -481,11 +481,11 @@ xmlport 50150 "50150_Posting_Setup_ERPG"
                                                            //hIF STRLEN(Felt07) = 4 THEN
                                                            //h   Felt07 := '0' + Felt07;
                                                            //hIF STRLEN(Felt07) = 5 THEN
-                    GenPostSetup."Inventory Adjmt. Account" := '000001230';  //Felt07;
-                    GenPostSetup."Direct Cost Applied Account" := '000002830';  //modkonto køb
-                    GenPostSetup."Overhead Applied Account" := '000002830';     //modkonto køb
+                    GenPostSetup."Inventory Adjmt. Account" := '1230';  //Felt07;
+                    GenPostSetup."Direct Cost Applied Account" := '2830';  //modkonto køb
+                    GenPostSetup."Overhead Applied Account" := '2830';     //modkonto køb
 
-                    GenPostSetup."Purchase Variance Account" := '000001230';    //Købsafvigelse
+                    GenPostSetup."Purchase Variance Account" := '1230';    //Købsafvigelse
                     GenPostSetup.MODIFY;
                 UNTIL GenPostSetup.NEXT = 0;
 
@@ -528,9 +528,9 @@ xmlport 50150 "50150_Posting_Setup_ERPG"
                                                                           //h   Felt07 := '0' + Felt07;
                                                                           //hIF STRLEN(Felt07) = 5 THEN
                                                                           //GenPostSetup."Inventory Adjmt. Account" := Felt08;
-                    GenPostSetup."Direct Cost Applied Account" := '000002830';  //modkonto køb
-                    GenPostSetup."Overhead Applied Account" := '000002830';     //modkonto køb
-                    GenPostSetup."Purchase Variance Account" := '000001230';    //Købsafvigelse
+                    GenPostSetup."Direct Cost Applied Account" := '2830';  //modkonto køb
+                    GenPostSetup."Overhead Applied Account" := '2830';     //modkonto køb
+                    GenPostSetup."Purchase Variance Account" := '1230';    //Købsafvigelse
                     GenPostSetup.MODIFY;
                 UNTIL GenPostSetup.NEXT = 0;
 
@@ -545,9 +545,9 @@ xmlport 50150 "50150_Posting_Setup_ERPG"
                     //h   Felt02 := '0' + Felt02;
                     //hIF STRLEN(Felt02) = 5 THEN
                     //141220 GenPostSetup."Sales Account" := Felt02;
-                    GenvareSetup."Inventory Account" := '000002830'; //Felt06; //Felt03;  //'13800';
-                    GenVareSetup."Inventory Account (Interim)" := '000002830'; //Felt06;
-                                                                               //hIF STRLEN(Felt09) = 4 THEN
+                    GenvareSetup."Inventory Account" := '2830'; //Felt06; //Felt03;  //'13800';
+                    GenVareSetup."Inventory Account (Interim)" := '2830'; //Felt06;
+                                                                          //hIF STRLEN(Felt09) = 4 THEN
 
                     GenvareSetup.MODIFY;
                 UNTIL GenvareSetup.NEXT = 0;
@@ -606,9 +606,9 @@ xmlport 50150 "50150_Posting_Setup_ERPG"
                         //h   Felt02 := '0' + Felt02;
                         //hIF STRLEN(Felt02) = 5 THEN
                         //141220 GenPostSetup."Sales Account" := Felt02;
-                        GenvareSetup."Inventory Account" := '000002830'; //Felt06; //Felt03;  //'13800';
-                        GenVareSetup."Inventory Account (Interim)" := '000002830'; //Felt06;
-                                                                                   //hIF STRLEN(Felt09) = 4 THEN
+                        GenvareSetup."Inventory Account" := '2830'; //Felt06; //Felt03;  //'13800';
+                        GenVareSetup."Inventory Account (Interim)" := '2830'; //Felt06;
+                                                                              //hIF STRLEN(Felt09) = 4 THEN
 
                         GenvareSetup.MODIFY;
                     UNTIL GenvareSetup.NEXT = 0;
@@ -675,19 +675,19 @@ xmlport 50150 "50150_Posting_Setup_ERPG"
                        Felt04 := '0' + Felt04;
                        */
                     CustPost."Receivables Account" := Felt08;
-                    CustPost."Payment Disc. Debit Acc." := '000001230'; //Felt04;
-                    CustPost."Payment Disc. Credit Acc." := '000001230'; //Felt04;
+                    CustPost."Payment Disc. Debit Acc." := '1230'; //Felt04;
+                    CustPost."Payment Disc. Credit Acc." := '1230'; //Felt04;
 
-                    CustPost."Interest Account" := '000002330';
-                    CustPost."Additional Fee Account" := '000001215';  //gebyr
+                    CustPost."Interest Account" := '2330';
+                    CustPost."Additional Fee Account" := '1215';  //gebyr
 
-                    CustPost."Invoice Rounding Account" := '000001230';
-                    CustPost."Debit Curr. Appln. Rndg. Acc." := '000001230';
-                    CustPost."Credit Curr. Appln. Rndg. Acc." := '000001230';
-                    CustPost."Debit Rounding Account" := '000001230';
-                    CustPost."Credit Rounding Account" := '000001230';
-                    CustPost."Payment Tolerance Debit Acc." := '000001230';
-                    CustPost."Payment Tolerance Credit Acc." := '000001230';
+                    CustPost."Invoice Rounding Account" := '1230';
+                    CustPost."Debit Curr. Appln. Rndg. Acc." := '1230';
+                    CustPost."Credit Curr. Appln. Rndg. Acc." := '1230';
+                    CustPost."Debit Rounding Account" := '1230';
+                    CustPost."Credit Rounding Account" := '1230';
+                    CustPost."Payment Tolerance Debit Acc." := '1230';
+                    CustPost."Payment Tolerance Credit Acc." := '1230';
 
                     CustPost.MODIFY;
                 UNTIL CustPost.NEXT = 0
@@ -703,19 +703,19 @@ xmlport 50150 "50150_Posting_Setup_ERPG"
                    Felt04 := '0' + Felt04;
                    */
                 CustPost."Receivables Account" := Felt08;  //020321   
-                CustPost."Payment Disc. Debit Acc." := '000001230'; //Felt04;
-                CustPost."Payment Disc. Credit Acc." := '000001230'; //Felt04;
+                CustPost."Payment Disc. Debit Acc." := '1230'; //Felt04;
+                CustPost."Payment Disc. Credit Acc." := '1230'; //Felt04;
 
-                CustPost."Interest Account" := '000002330';
-                CustPost."Additional Fee Account" := '000001215';   //gebyr
+                CustPost."Interest Account" := '2330';
+                CustPost."Additional Fee Account" := '1215';   //gebyr
 
-                CustPost."Invoice Rounding Account" := '000001230';
-                CustPost."Debit Curr. Appln. Rndg. Acc." := '000001230';
-                CustPost."Credit Curr. Appln. Rndg. Acc." := '000001230';
-                CustPost."Debit Rounding Account" := '000001230';
-                CustPost."Credit Rounding Account" := '000001230';
-                CustPost."Payment Tolerance Debit Acc." := '000001230';
-                CustPost."Payment Tolerance Credit Acc." := '000001230';
+                CustPost."Invoice Rounding Account" := '1230';
+                CustPost."Debit Curr. Appln. Rndg. Acc." := '1230';
+                CustPost."Credit Curr. Appln. Rndg. Acc." := '1230';
+                CustPost."Debit Rounding Account" := '1230';
+                CustPost."Credit Rounding Account" := '1230';
+                CustPost."Payment Tolerance Debit Acc." := '1230';
+                CustPost."Payment Tolerance Credit Acc." := '1230';
                 CustPost.INSERT;
 
             END;
