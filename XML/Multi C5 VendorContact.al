@@ -36,23 +36,25 @@
                 {
                 }
 
-                /* 260722
+                //* 260722
                 fieldelement(Phone; Contact."Phone No.")
                 {
                 }
-                260722 */
+                //260722 */
 
-                textelement(PhoneTxt)
-                {
-                    trigger OnBeforePassVariable()
+                /*
+                                textelement(PhoneTxt)
+                                {
+                                    trigger OnBeforePassVariable()
 
-                    var
+                                    var
 
-                    begin
-                        Contact."Phone No." := DelChr(PhoneTxt, '=', 'äÄÜüûabcdefghijklmnopqrstuvwxyzæøå@ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ');
-                    End;
+                                    begin
+                                        Contact."Phone No." := DelChr(PhoneTxt, '=', 'äÄÜüûabcdefghijklmnopqrstuvwxyzæøå@ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ');
+                                    End;
 
-                }
+                                }
+                                */
                 fieldelement(Language; Contact."Language Code")
                 {
                 }
@@ -74,40 +76,65 @@
                 fieldelement(CompanyName; Contact."Company Name")
                 {
                 }
-                /*  260722
+                //*  260722
                 fieldelement(Phone; Contact."Phone No.")
                 {
                 }
-260722 */
-                textelement(PhoneTxt2)
-                {
-                    trigger OnBeforePassVariable()
 
-                    var
+                //260722 */
+                /*
+                                textelement(PhoneTxt2)
+                                {
+                                    trigger OnBeforePassVariable()
 
-                    begin
-                        Contact."Phone No." := DelChr(PhoneTxt2, '=', 'äÄÜüûabcdefghijklmnopqrstuvwxyzæøå@ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ');
-                    End;
+                                    var
 
-                }
+                                    begin
+                                        Contact."Phone No." := DelChr(PhoneTxt2, '=', 'äÄÜüûabcdefghijklmnopqrstuvwxyzæøå@ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ');
+                                    End;
 
-                /* 260722
+                                }
+                                */
+
+                //* 260722
                 fieldelement(MobilePhoneNo; Contact."Mobile Phone No.")
                 {
                 }
-                260722 */
+                //260722 */
 
-                textelement(MobilePhoneTxt)
-                {
-                    trigger OnBeforePassVariable()
+                /*
+                                textelement(MobilePhoneTxt)
+                                {
+                                    trigger OnBeforePassVariable()
 
-                    var
+                                    var
 
-                    begin
-                        Contact."Mobile Phone No." := DelChr(MobilePhoneTxt, '=', 'äÄÜüûabcdefghijklmnopqrstuvwxyzæøå@ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ');
-                    End;
+                                    begin
+                                        Contact."Mobile Phone No." := DelChr(MobilePhoneTxt, '=', 'äÄÜüûabcdefghijklmnopqrstuvwxyzæøå@ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ');
+                                    End;
 
-                }
+                                }
+                                */
+
+                trigger OnBeforeInsertRecord()
+                var
+                //NoSeriesMgt: Codeunit NoSeriesManagement;
+                //ConNo: Code[20];
+
+
+                begin
+                    /*
+                    Message('12345');
+                    ConNo := '';
+                    if Contact."No." = '' then
+                        conno := NoSeriesMgt.TryGetNextNo('EMNE', Today);
+                    Message(ConNo);
+                    if ConNo <> '' then
+                        Contact."No." := ConNo;
+                        */
+                    Contact."Mobile Phone No." := DelChr(Contact."Mobile Phone No.", '=', 'äÄÜüûabcdefghijklmnopqrstuvwxyzæøå@ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ');
+                    Contact."Phone No." := DelChr(Contact."Phone No.", '=', 'äÄÜüûabcdefghijklmnopqrstuvwxyzæøå@ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ');
+                end;
 
                 trigger OnBeforeModifyRecord()
                 begin
@@ -154,6 +181,7 @@
     trigger OnPreXmlPort()
     begin
         REPORT.RunModal(5194, false);
+        Commit;
     end;
 
     var
