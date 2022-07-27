@@ -99,7 +99,9 @@ xmlport 70009 "Multi C5 VendTable"
                         VendTable."Gen. Bus. Posting Group" := Group;
                         VendTable."VAT Bus. Posting Group" := 'INDENLANDS';
 
-                        VendTable."Vendor Posting Group" := Group
+                        VendTable."Vendor Posting Group" := Group;
+                        if BusPostingGroup.Get(Group) then
+                            VendTable."VAT Bus. Posting Group" := BusPostingGroup."Def. VAT Bus. Posting Group";
                     end;
                 }
                 textelement(FixedDisc)
@@ -383,6 +385,7 @@ xmlport 70009 "Multi C5 VendTable"
         "Dimension Value": Record "Dimension Value";
         "Default Dimension": Record "Default Dimension";
         VendorPostingGroup: Record "Vendor Posting Group";
+        BusPostingGroup: Record "Gen. Business Posting Group";
         Contact: Record Contact;
         ContBusRel: Record "Contact Business Relation";
         DefaultDimensionSet: Codeunit "Multi C5 Dimension";

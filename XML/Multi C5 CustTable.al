@@ -107,6 +107,9 @@ xmlport 70005 "Multi C5 CustTable"
                         CustTable."VAT Bus. Posting Group" := 'INDENLANDS';
 
                         CustTable."Customer Posting Group" := Group;
+                        if BusPostingGroup.Get(Group) then
+                            CustTable."VAT Bus. Posting Group" := BusPostingGroup."Def. VAT Bus. Posting Group";
+
                     end;
 
                 }
@@ -406,6 +409,7 @@ xmlport 70005 "Multi C5 CustTable"
         "Dimension Value": Record "Dimension Value";
         "Default Dimension": Record "Default Dimension";
         CustomerPostingGroup: Record "Customer Posting Group";
+        BusPostingGroup: Record "Gen. Business Posting Group";
         Contact: Record Contact;
         ContBusRel: Record "Contact Business Relation";
         DefaultDimensionSet: Codeunit "Multi C5 Dimension";
